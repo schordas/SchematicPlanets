@@ -45,23 +45,6 @@ public final class PlanetProvider {
         public static Uri withId(long id){
             return buildUri(Path.PLANETS, String.valueOf(id));
         }
-
-//        @NotifyInsert(paths = Path.PLANETS) public static Uri [] onInsert(ContentValues values){
-//            final long id = values.getAsLong(PlanetColumns._ID);
-//            return new Uri [] {withId(id)};
-//        }
-
-//        @NotifyDelete(paths = Path.PLANETS + "/#") public static Uri onDelete(Context context,
-//                                                                              Uri uri) {
-//            final long noteId = Long.valueOf(uri.getPathSegments().get(1));
-//            Cursor c = context.getContentResolver().query(uri, null, null, null, null);
-//            c.moveToFirst();
-//            final long listId = c.getLong(c.getColumnIndex(NoteColumns.LIST_ID));
-//            c.close();
-//
-//            return new Uri[] {
-//                    withId(noteId), fromList(listId), Lists.withId(listId),
-//            };
     }
 
     @TableEndpoint(table = PlanetDatabase.ARCHIVED_PLANETS) public static class ArchivedPlanets{
