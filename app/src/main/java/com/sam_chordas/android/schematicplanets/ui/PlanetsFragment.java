@@ -91,8 +91,6 @@ public class PlanetsFragment extends Fragment implements LoaderManager.LoaderCal
         mCursorAdapter = new PlanetCursorAdapter(getActivity(), null);
         recyclerView.setAdapter(mCursorAdapter);
 
-//        fab.r(recyclerView);
-
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,18 +103,12 @@ public class PlanetsFragment extends Fragment implements LoaderManager.LoaderCal
         ItemTouchHelper.Callback callback = new SimpleItemTouchHelperCallback(mCursorAdapter);
         mItemTouchHelper = new ItemTouchHelper(callback);
         mItemTouchHelper.attachToRecyclerView(recyclerView);
-
-
-//        mRecyclerView = (RecyclerView) rootView.findViewById(R.id.planet_list);
-//        mRecyclerView.setAdapter(mCursorAdapter);
         return rootView;
     }
 
     public void insertData(){
         Log.d(LOG_TAG, "insert");
         ArrayList<ContentProviderOperation> batchOperations = new ArrayList<>(planets.length);
-//        batchOperations.add(ContentProviderOperation.newDelete(
-//                PlanetProvider.Planets.CONTENT_URI).build());
 
         for (Planet planet : planets){
             ContentProviderOperation.Builder builder = ContentProviderOperation.newInsert(
@@ -125,10 +117,6 @@ public class PlanetsFragment extends Fragment implements LoaderManager.LoaderCal
             builder.withValue(PlanetColumns.DIST_FROM_SUN, planet.getDistFromSun());
             builder.withValue(PlanetColumns.IMAGE_RESOURCE, planet.getImageResource());
             batchOperations.add(builder.build());
-//            planetValuesArr[i] = new ContentValues();
-//            planetValuesArr[i].put(PlanetColumns.NAME, planets[i].getName());
-//            planetValuesArr[i].put(PlanetColumns.DIST_FROM_SUN, planets[i].getDistFromEarth());
-//            planetValuesArr[i].put(PlanetColumns.IMAGE_RESOURCE, planets[i].getImageResource());
         }
 
         try{
