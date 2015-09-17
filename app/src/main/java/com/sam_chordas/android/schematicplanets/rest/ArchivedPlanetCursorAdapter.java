@@ -17,6 +17,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by sam_chordas on 8/18/15.
+ * Credit to skyfishjy gist:
+ *    https://gist.github.com/skyfishjy/443b7448f59be978bc59
+ * for the code structure  
  */
 public class ArchivedPlanetCursorAdapter extends CursorAdapter{
     private static final String LOG_TAG = ArchivedPlanetCursorAdapter.class.getSimpleName();

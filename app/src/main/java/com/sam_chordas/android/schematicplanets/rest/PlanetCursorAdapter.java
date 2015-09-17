@@ -22,6 +22,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by sam_chordas on 8/12/15.
+ * Credit to skyfishjy gist:
+ *    https://gist.github.com/skyfishjy/443b7448f59be978bc59
+ * for the code structure
  */
 public class PlanetCursorAdapter extends CursorRecyclerViewAdapter<PlanetCursorAdapter.ViewHolder>
 implements ItemTouchHelperAdapter{
